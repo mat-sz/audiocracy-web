@@ -13,4 +13,9 @@ export enum ActionType {
   WS_MESSAGE = 'WS_MESSAGE',
   WS_CONNECTED = 'WS_CONNECTED',
   WS_DISCONNECTED = 'WS_DISCONNECTED',
+
+  // Playback
+  ADD = 'ADD',
+  DOWNVOTE = 'DOWNVOTE',
+  SKIP = 'SKIP',
 }

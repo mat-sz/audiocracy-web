@@ -6,6 +6,7 @@ import {
   setQueueAction,
   setTimeAction,
 } from '../actions/state';
+import { sendMessageAction } from '../actions/websocket';
 import { ActionType } from '../types/ActionType';
 import { MessageType } from '../types/MessageType';
 import { ActionModel, Message } from '../types/Models';
@@ -37,6 +38,32 @@ function* disconnected() {
   yield put(setConnectedAction(false));
 }
 
+function* add(action: ActionModel) {
+  yield put(
+    sendMessageAction({
+      type: MessageType.ADD,
+      url: action.value as string,
+    })
+  );
+}
+
+function* downvote() {
+  yield put(
+    sendMessageAction({
+      type: MessageType.DOWNVOTE,
+    })
+  );
+}
+
+function* skip() {
+  yield put(
+    sendMessageAction({
+      type: MessageType.SKIP,
+      password: '',
+    })
+  );
+}
+
 export function* root() {
   yield takeEvery(ActionType.WS_MESSAGE, function* (action: ActionModel) {
     // TODO: rewrite this to avoid passing dispatch
@@ -44,4 +71,8 @@ export function* root() {
   });
   yield takeEvery(ActionType.WS_CONNECTED, connected);
   yield takeEvery(ActionType.WS_DISCONNECTED, disconnected);
+
+  yield takeEvery(ActionType.ADD, add);
+  yield takeEvery(ActionType.DOWNVOTE, downvote);
+  yield takeEvery(ActionType.SKIP, skip);
 }

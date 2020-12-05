@@ -1,7 +1,7 @@
-import { ActionModel, MessageModel } from '../types/Models';
+import { ActionModel, Message, MessageModel } from '../types/Models';
 import { ActionType } from '../types/ActionType';
 
-export function sendMessageAction(message: MessageModel): ActionModel {
+export function sendMessageAction(message: Message): ActionModel {
   return {
     type: ActionType.WS_SEND_MESSAGE,
     value: message,
