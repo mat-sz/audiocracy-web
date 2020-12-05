@@ -11522,6 +11522,11 @@ typescript@^3.9.5:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
+typesocket@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/typesocket/-/typesocket-1.0.1.tgz#56d0bbc33b340f296e37004c542db6228acae457"
+  integrity sha512-Ab+YgrBAxg1SEH0Bgtl6aCx4Jp0Wxtjir4OY/EYZbkU4HKDd7d6GPjWakZaHQ0HO6V3vqXLuY4xpLm1lumVJRA==
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"
