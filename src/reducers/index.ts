@@ -1,9 +1,19 @@
 import { Store } from 'redux';
-import { ActionModel } from '../types/Models';
+import { ActionModel, QueueItem } from '../types/Models';
 
-export interface StateType {}
+export interface StateType {
+  queue: QueueItem[];
+  current: QueueItem | null;
+  downvotes: number;
+  time: number;
+}
 
-let initialState: StateType = {};
+let initialState: StateType = {
+  queue: [],
+  current: null,
+  downvotes: 0,
+  time: 0,
+};
 
 export type StoreType = Store<StateType, ActionModel>;
 
