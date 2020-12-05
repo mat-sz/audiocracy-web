@@ -1,5 +1,6 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { downvoteAction } from '../actions/playback';
 import { StateType } from '../reducers';
 
 import { timeDisplay } from '../Utils';
@@ -7,6 +8,12 @@ import { timeDisplay } from '../Utils';
 export const NowPlaying: React.FC = () => {
   const item = useSelector((state: StateType) => state.current);
   const time = useSelector((state: StateType) => state.time);
+  const downvotes = useSelector((state: StateType) => state.downvotes);
+  const dispatch = useDispatch();
+
+  const downvote = useCallback(() => {
+    dispatch(downvoteAction());
+  }, [dispatch]);
 
   if (!item) {
     return (
@@ -38,6 +45,9 @@ export const NowPlaying: React.FC = () => {
         <div>
           <h1>{item.title}</h1>
           <h2>{item.author}</h2>
+          <div className="downvote">
+            <button onClick={downvote}>Downvote ({downvotes})</button>
+          </div>
         </div>
       </div>
     </div>

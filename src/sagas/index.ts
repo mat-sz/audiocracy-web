@@ -17,6 +17,7 @@ function* message(action: ActionModel) {
   switch (msg.type) {
     case MessageType.STATE:
       yield put(setQueueAction(msg.queue, msg.current));
+      yield put(setDownvotesAction(msg.downvotes));
       break;
     case MessageType.TIME:
       yield put(setTimeAction(msg.time));
