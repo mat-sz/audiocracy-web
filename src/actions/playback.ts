@@ -1,4 +1,4 @@
-import { ActionModel, QueueItem } from '../types/Models';
+import { ActionModel } from '../types/Models';
 import { ActionType } from '../types/ActionType';
 
 export function addAction(url: string): ActionModel {

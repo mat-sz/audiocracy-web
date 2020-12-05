@@ -25,32 +25,37 @@ export const NowPlaying: React.FC = () => {
   }
 
   return (
-    <div className="now-playing section">
-      <h3>Now playing</h3>
-      <div className="now-playing-grid">
-        <div className="thumbnail">
-          <div className="shadow"></div>
-          <img src={item.thumbnail} alt={item.title} />
-          <span className="duration">
-            {timeDisplay(time)} / {timeDisplay(item.duration)}
-          </span>
-          <div className="progress-bar">
-            <div
-              style={{
-                width: Math.min((time / item.duration) * 100, 100) + '%',
-              }}
-            ></div>
+    <>
+      <div className="blurred-background">
+        <img src={item.thumbnail} alt="" />
+      </div>
+      <div className="now-playing section">
+        <h3>Now playing</h3>
+        <div className="now-playing-grid">
+          <div className="thumbnail">
+            <div className="shadow"></div>
+            <img src={item.thumbnail} alt={item.title} />
+            <span className="duration">
+              {timeDisplay(time)} / {timeDisplay(item.duration)}
+            </span>
+            <div className="progress-bar">
+              <div
+                style={{
+                  width: Math.min((time / item.duration) * 100, 100) + '%',
+                }}
+              ></div>
+            </div>
           </div>
-        </div>
-        <div>
-          <h1>{item.title}</h1>
-          <h2>{item.author}</h2>
-          <div className="downvote">
-            <button onClick={downvote}>Downvote ({downvotes})</button>
+          <div>
+            <h1>{item.title}</h1>
+            <h2>{item.author}</h2>
+            <div className="downvote">
+              <button onClick={downvote}>Downvote ({downvotes})</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
