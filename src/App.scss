@@ -113,7 +113,7 @@ button {
 }
 
 .now-playing {
-  .now-playing-grid {
+  &-grid {
     margin-top: 10px;
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -212,17 +212,19 @@ h3 {
 }
 
 @media screen and (max-width: 720px) {
-  .now-playing .now-playing-grid {
-    margin-top: 10px;
-    display: block;
-    grid-template-columns: 100%;
+  .now-playing {
+    &-grid {
+      margin-top: 10px;
+      display: block;
+      grid-template-columns: 100%;
 
-    & > div {
-      margin: 0;
-    }
+      & > div {
+        margin: 0;
+      }
 
-    button {
-      width: 100%;
+      button {
+        width: 100%;
+      }
     }
   }
 
