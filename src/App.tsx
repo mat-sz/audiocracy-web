@@ -1,17 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
+
+import NowPlaying from './components/NowPlaying';
+import Queue from './components/Queue';
+import Status from './components/Status';
 
 export const App: React.FC = () => {
   return (
-    <Router>
-      <div className="app">
-        <Switch>
-          <Route path="/">
-            <h1>Hello, world!</h1>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="app">
+      <Status />
+      <NowPlaying />
+      <Queue />
+    </div>
   );
 };
