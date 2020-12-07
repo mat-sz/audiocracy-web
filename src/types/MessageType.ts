@@ -4,6 +4,7 @@ export enum MessageType {
   MESSAGE = 'message',
   DOWNVOTES = 'downvotes',
   TIME = 'time',
+  PING = 'ping',
 
   // Sent:
   DOWNVOTE = 'downvote',

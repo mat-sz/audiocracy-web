@@ -9,7 +9,7 @@ import {
 import { sendMessageAction } from '../actions/websocket';
 import { ActionType } from '../types/ActionType';
 import { MessageType } from '../types/MessageType';
-import { ActionModel, Message } from '../types/Models';
+import { ActionModel, Message, PingMessageModel } from '../types/Models';
 
 function* message(action: ActionModel) {
   const msg: Message = action.value as Message;
@@ -27,6 +27,13 @@ function* message(action: ActionModel) {
       break;
     case MessageType.MESSAGE:
       yield put(setMessageAction(msg.text));
+      break;
+    case MessageType.PING:
+      const pongMessage: PingMessageModel = {
+        type: MessageType.PING,
+        timestamp: new Date().getTime(),
+      };
+      yield put(sendMessageAction(pongMessage));
       break;
   }
 }

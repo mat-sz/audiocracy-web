@@ -43,6 +43,11 @@ export interface SkipMessageModel extends MessageModel {
   password: string;
 }
 
+export interface PingMessageModel extends MessageModel {
+  type: MessageType.PING;
+  timestamp: number;
+}
+
 export type Message =
   | StateMessageModel
   | MessageMessageModel
@@ -50,7 +55,8 @@ export type Message =
   | TimeMessageModel
   | AddMessageModel
   | DownvoteMessageModel
-  | SkipMessageModel;
+  | SkipMessageModel
+  | PingMessageModel;
 
 export interface QueueItem {
   id: string;
