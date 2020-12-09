@@ -4,10 +4,11 @@ export enum MessageType {
   MESSAGE = 'message',
   DOWNVOTES = 'downvotes',
   TIME = 'time',
-  PING = 'ping',
+  SEARCH = 'search',
 
   // Sent:
   DOWNVOTE = 'downvote',
   ADD = 'add',
   SKIP = 'skip',
+  PING = 'ping',
 }
