@@ -42,7 +42,7 @@ export function setDownvotesAction(downvotes: number): ActionModel {
   };
 }
 
-export function setSearchResultsAction(results: QueueItem[]): ActionModel {
+export function setSearchResultsAction(results?: QueueItem[]): ActionModel {
   return {
     type: ActionType.SET_SEARCH_RESULTS,
     value: results,

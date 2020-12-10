@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import QueueForm from './QueueForm';
 import { StateType } from '../reducers';
 import { timeDisplay } from '../Utils';
+import SearchResults from './SearchResults';
 
 export const Queue: React.FC = () => {
   const queue = useSelector((state: StateType) => state.queue);
@@ -12,6 +13,7 @@ export const Queue: React.FC = () => {
     <div className="queue section">
       <h3>Queue</h3>
       <QueueForm />
+      <SearchResults />
       <ul>
         {queue.map((item, i) => (
           <li key={i}>
