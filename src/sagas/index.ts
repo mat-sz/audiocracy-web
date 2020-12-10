@@ -4,6 +4,7 @@ import {
   setDownvotesAction,
   setMessageAction,
   setQueueAction,
+  setSearchResultsAction,
   setTimeAction,
 } from '../actions/state';
 import { sendMessageAction } from '../actions/websocket';
@@ -27,6 +28,9 @@ function* message(action: ActionModel) {
       break;
     case MessageType.MESSAGE:
       yield put(setMessageAction(msg.text));
+      break;
+    case MessageType.SEARCH:
+      yield put(setSearchResultsAction(msg.items));
       break;
     case MessageType.PING:
       const pongMessage: PingMessageModel = {
