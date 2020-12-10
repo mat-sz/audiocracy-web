@@ -5,6 +5,7 @@ import { ActionModel, QueueItem } from '../types/Models';
 export interface StateType {
   queue: QueueItem[];
   current: QueueItem | null;
+  searchResults?: QueueItem[];
   downvotes: number;
   time: number;
   connected: boolean;
@@ -40,6 +41,9 @@ export function applicationState(state = initialState, action: ActionModel) {
       };
       newState.current = value.current;
       newState.queue = value.queue;
+      break;
+    case ActionType.SET_SEARCH_RESULTS:
+      newState.searchResults = action.value as QueueItem[];
       break;
     default:
       return state;

@@ -41,3 +41,10 @@ export function setDownvotesAction(downvotes: number): ActionModel {
     value: downvotes,
   };
 }
+
+export function setSearchResultsAction(results: QueueItem[]): ActionModel {
+  return {
+    type: ActionType.SET_SEARCH_RESULTS,
+    value: results,
+  };
+}
