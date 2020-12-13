@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAction } from '../actions/playback';
 import { setSearchResultsAction } from '../actions/state';
@@ -8,6 +8,9 @@ import { timeDisplay } from '../Utils';
 export const SearchResults: React.FC = () => {
   const searchResults = useSelector((state: StateType) => state.searchResults);
   const dispatch = useDispatch();
+  const close = useCallback(() => {
+    dispatch(setSearchResultsAction(undefined));
+  }, [dispatch]);
 
   if (!searchResults) {
     return null;
@@ -16,8 +19,9 @@ export const SearchResults: React.FC = () => {
   return (
     <div className="search-results">
       <ul className="queue">
-        <li>
+        <li className="queue-title">
           <h2>Search results</h2>
+          <button onClick={close}>Close</button>
         </li>
         {searchResults.map(item => (
           <li key={item.id}>
