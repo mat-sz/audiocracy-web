@@ -5,7 +5,7 @@ import { applicationState, StoreType } from './reducers';
 import { root } from './sagas';
 import { socketMiddleware } from './socketMiddleware';
 
-const serverUrl = process.env.REACT_APP_SERVER_URL as string;
+const serverUrl = process.env.REACT_APP_SERVER as string;
 
 export const newStore = (): StoreType => {
   const sagaMiddleware = createSagaMiddleware();
