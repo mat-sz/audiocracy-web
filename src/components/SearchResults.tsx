@@ -16,6 +16,9 @@ export const SearchResults: React.FC = () => {
   return (
     <div className="search-results">
       <ul className="queue">
+        <li>
+          <h2>Search results</h2>
+        </li>
         {searchResults.map(item => (
           <li key={item.id}>
             <img src={item.thumbnail} alt={item.title} />
